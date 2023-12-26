@@ -1,0 +1,163 @@
+/* ============= PROJECT CSS =============== */
+nav {
+  /* background: var(--white); */
+  box-shadow: var(--shadow-1);
+  /* position: fixed;
+  background-color: #3B3F44; */
+}
+
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.nav-toggle {
+  font-size: 1.5rem;
+  color: var(--primary-500);
+  background: transparent;
+  border-color: transparent;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+
+.nav-toggle:hover {
+  color: var(--primary-700);
+  transform: rotate(90deg);
+}
+
+.logo {
+  height: 40px;
+  width: 45px;
+}
+
+.links {
+  display: flex;
+  /* flex-direction: column-reverse; */
+  flex-direction: column;
+}
+
+
+.links li {
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  display: block;
+  padding: 0.5rem 1rem;
+  transition: all 0, 5s linear;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+
+
+
+@media screen and (max-width: 1270px) {
+  .links li:hover {
+    background: #3B3F44;
+    padding-right: 2rem;
+    transition: var(--tarnsition-2);
+    color: #FFFFFF;
+    cursor: pointer;
+  }
+}
+
+.links-container {
+  overflow: hidden;
+  transition: all 0.3s linear;
+}
+
+.social-icons {
+  display: none;
+}
+
+@media screen and (min-width: 972px) {
+  .nav-center {
+    max-width: 1500px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.4rem;
+  }
+
+  .nav-header {
+    padding: 0;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .links-container {
+    height: auto !important;
+  }
+
+  .links {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .links li {
+    padding: 0;
+  }
+
+  .links li:hover {
+    padding: 0;
+    background: transparent;
+  }
+
+  .social-icons {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .social-icons a {
+    color: var(--primary-500);
+    transition: all 2s linear;
+  }
+
+  .social-icons a:hover {
+    color: var(--primary-300);
+  }
+}
+
+.nav2-background {
+  /* background: url('/images/t1.webp'); */
+  background: url('/images/site/backmenu.png');
+  height: 250px;
+  /* object-fit: cover; */
+  background-size: cover;
+  background-position: center;
+}
+
+/* @media screen and (min-width: 768px) {
+  .section4-head {
+  height: 265px;
+}
+} */
+.nav2-background::before {
+  background-color: black;
+  opacity: 0.1;
+}
+
+.s {
+  display: flex;
+}
+
+.s h2 {
+  /* flex: 1; */
+  width: 800px;
+}
+
+.info {
+  display: none !important;
+}
+
+@media screen and (min-width: 768px) {
+  .info {
+    display: flex !important;
+  }
+}
