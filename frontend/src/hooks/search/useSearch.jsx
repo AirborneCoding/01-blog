@@ -7,7 +7,7 @@ const useSearch = () => {
 
     const onSubmit = async (e) => {
         e.preventDefault()
-        const { data } = getFormValues(e.currentTarget)
+        let { data } = getFormValues(e.currentTarget)
         if (data?.search !== '') {
             // console.log(data);
             Navigate(`/search?query=${encodeURIComponent(data?.search)}`);
@@ -18,12 +18,17 @@ const useSearch = () => {
     const searchParams = new URLSearchParams(location.search);
     const searchedQuery = searchParams.get('query');
 
-    const { data: searchData, isLoading, isError, error } = useSearchBlogQuery(searchedQuery)
+    var { data: searchData, isLoading, isError, error, isFetching } = useSearchBlogQuery(searchedQuery)
+
+    // console.log(searchedQuery);
 
     return {
         onSubmit,
         searchedQuery,
-        searchData, isLoading, isError, error
+        searchData,
+        isLoading,
+        isError,
+        error
     }
 };
 

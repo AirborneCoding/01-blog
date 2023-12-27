@@ -14,7 +14,8 @@ const Home = () => {
     // console.log(homePosts);
     const { posts } = homePosts
 
-    return <main className="pb-16">
+    return <main className="pb-16 my-10">
+
         <Section1 posts={posts} />
         <Section2 posts={posts} />
         {posts?.slice(8, 9)?.map((post) => <Section3 key={post._id} {...post} />)}

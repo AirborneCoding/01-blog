@@ -1,6 +1,6 @@
 import React from "react";
 import { SearchInput } from "@/helpers"
-import useSearch from "../../../hooks/search/useSearch";
+import useSearch from "@/hooks/search/useSearch";
 const NavSearch = () => {
     const {
         onSubmit

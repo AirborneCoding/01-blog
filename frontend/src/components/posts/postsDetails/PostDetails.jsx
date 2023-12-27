@@ -5,6 +5,7 @@ import img from "/default.png"
 import Comments from "./Comments";
 import AddComment from "./AddComment";
 import { formatDate } from "@/utils";
+import { Loading } from "@/helpers";
 
 const PostDetails = (props) => {
   window.scroll(0, 100)
@@ -22,6 +23,8 @@ const PostDetails = (props) => {
     submitComment,
 
   } = props
+
+
 
   const isLiked = post?.likes.includes(user?.id);
   const formatedDate = formatDate(post?.createdAt)

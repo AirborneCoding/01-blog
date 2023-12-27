@@ -5,6 +5,7 @@ import usePostDetails from "@/hooks/posts/usePostDtails";
 import { useHandleLikeMutation } from "@/redux/services/postsServices";
 import { PostDetails, SimilarPosts } from "@/components";
 import { Error } from "@/errors"
+import { Loading } from "@/helpers";
 
 const SinglePost = () => {
   window.scrollTo(0, 100)
@@ -37,6 +38,10 @@ const SinglePost = () => {
     } catch (error) {
       console.log(error);
     }
+  }
+
+  if (postLoader) {
+    return <Loading />
   }
 
   if (postError || isCommentError || similarPostsError) {

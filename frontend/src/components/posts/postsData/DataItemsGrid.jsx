@@ -18,7 +18,7 @@ const DataItemsGrid = ({ posts, user, handleLikePost, fromSearch }) => {
           </Link>
           <div className="card-body justify-between">
 
-            <div className="flex justify-between items-center">
+            <div className="flex flex-col-reverse lg:flex-row justify-between lg:items-center lg:space-y-0 space-y-2">
               <Link to={`/posts/search?category=${encodeURIComponent(post?.category?.name)}`} className="text-base bg-blog text-white rounded px-0.5 tracking-wider hover:underline">{post?.category?.name}</Link>
               <div className="flex items-center">
                 <Link

@@ -37,7 +37,9 @@ const Posts = () => {
         setCategoryTerm(category);
         refetch({ category: category });
     };
-
+    // if (isFetching) {
+    //     return <div>ssss</div>
+    // }
     return (
         <main className="body-container w-full overflow-hidden text-base text-black font-libre-baskerville mt-16 min-h-screen">
             <Filters
@@ -51,30 +53,33 @@ const Posts = () => {
                 </div>
 
                 <div className="flex-grow pb-4">
-                    {/* {isFetching ? (
+                    {isFetching ? (
                         <Loading />
                     ) : (
-                        <PostsData
-                            user={user}
-                            posts={posts}
-                            totalData={totalData}
-                        />
-                    )} */}
-                    <PostsData
+                        <>
+                            <PostsData
+                                user={user}
+                                posts={posts}
+                                totalData={totalData}
+                            />
+                            <Pagination
+                                pageCount={pageCount}
+                                page={page}
+                            />
+                        </>
+                    )}
+                    {/* <PostsData
                         user={user}
                         posts={posts}
                         totalData={totalData}
-                    />
+                    /> */}
                 </div>
 
                 <div className="hidden xl:flex flex-none w-1/4 p-4 ">
                     <Categories onCategoryClick={handleCategoryClick} />
                 </div>
             </section>
-            <Pagination
-                pageCount={pageCount}
-                page={page}
-            />
+
         </main>
     );
 };

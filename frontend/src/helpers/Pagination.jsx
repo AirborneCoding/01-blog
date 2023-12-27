@@ -16,7 +16,7 @@ const Pagination = ({ pageCount, page }) => {
     if (pageCount < 2) return null;
 
     return (
-        <div className="join">
+        <div className="join my-10">
             <div className="join-container">
                 {pages.map((pageNumber) => (
                     <input
