@@ -11,7 +11,7 @@ const Section6 = ({ posts }) => {
             return (
                 <div key={item?._id} className='lg:flex lg:flex-col lg:justify-between  gap-4'> 
                     <figure>
-                        <img src={image} alt={item?.title} className='h-56 object-cover w-full' />
+                        <img src={image} alt={item?.title} className='h-56 object-cover w-full' loading="lazy" />
                     </figure>
                     <div className='flex flex-col justify-between'>
                         <div className=''>

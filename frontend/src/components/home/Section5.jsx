@@ -13,6 +13,7 @@ const Section5 = (props) => {
                 className="object-cover w-full h-[600px] "
                 src={image}
                 alt="Your Image"
+                loading="lazy"
             />
         </figure>
 

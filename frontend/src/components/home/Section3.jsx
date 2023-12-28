@@ -8,6 +8,7 @@ const Section3 = (props) => {
                     className="rounded"
                     src={props?.image?.url || defaultImg}
                     alt={props?.title}
+                    loading="lazy"
                 />
                 <div className="section3-info mb-24">
                     <h3 className="font-extrabold text-white  body-container">

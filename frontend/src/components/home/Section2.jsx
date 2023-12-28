@@ -45,6 +45,7 @@ const Section2 = ({ posts }) => {
                       : ''
                     } ${index === 3 ? 'w-full overflow-hidden lg:h-[270px] lg:object-cover' : ''
                     }`}
+                  loading="lazy"
                 />
               </div>
 

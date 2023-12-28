@@ -27,6 +27,7 @@ const PostSection = ({ posts }) => {
                     src={currentArticle?.image?.url || defaultImage}
                     alt={currentArticle?.title}
                     className="w-full h-[700px] object-cover"
+                    loading="lazy"
                 />
 
                 {/* Card overlay */}

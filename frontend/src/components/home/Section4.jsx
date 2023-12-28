@@ -10,7 +10,7 @@ const Section4 = ({ posts }) => {
                 const image = item?.image?.url || defaultImage
                 return <div key={item._id} className='latest-posts h-full cursor-pointer'>
                     <Link to={`/posts/${item?._id}/`}>
-                        <img src={image} alt={item?.title} className="h-full md:h-96 md:w-full object-cover rounded" />
+                        <img src={image} alt={item?.title} className="h-full md:h-96 md:w-full object-cover rounded" loading="lazy" />
                         <div className="latest-articles">
                             <h5 className='text-xl text-white hover:underline'>{item?.title}</h5>
                             <p className="text-gray-400" dangerouslySetInnerHTML={{ __html: item?.content.substring(0, 100) }} />
@@ -26,7 +26,7 @@ const Section4 = ({ posts }) => {
                     <Link
                         to={`/posts/${item?._id}/`}
                     >
-                        <img src={image} alt={item?.title} className="h-full object-cover rounded" />
+                        <img src={image} alt={item?.title} className="h-full object-cover rounded" loading="lazy" />
                         <div className="latest-articles">
                             <h5 className='text-xl text-white hover:underline'>{item?.title}</h5>
                             <p className=" text-gray-400" dangerouslySetInnerHTML={{ __html: item?.content.substring(0, 100) }} />
