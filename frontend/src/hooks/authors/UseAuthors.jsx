@@ -3,11 +3,15 @@ import { useParams } from "react-router-dom";
 
 const UseAuthors = () => {
     const { id } = useParams();
+
+    // fetch author profile
     const { data: author, isError: authorError, isLoading: authorLoader } = useGetAuthorProfileQuery({ id: id });
 
+    // fetch author posts
     const { data: authorPosts, isError: authorPostsError, isLoading: authorPostsLoader } = useFethAuthorPostsQuery({ id: id });
 
-    const { data: authors, isError: authorsError, isLoading: authorsLoader } = useFetchAuthorsQuery();
+    // fetch author posts
+    // const { data: authors, isError: authorsError, isLoading: authorsLoader } = useFetchAuthorsQuery();
 
 
     return {
@@ -21,9 +25,9 @@ const UseAuthors = () => {
         authorPostsLoader,
         authorPostsError,
         //authors
-        authors,
-        authorsLoader,
-        authorsError,
+        // authors,
+        // authorsLoader,
+        // authorsError,
     };
 };
 

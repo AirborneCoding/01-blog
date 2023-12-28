@@ -21,7 +21,7 @@ const AuthorInfo = (props) => {
       }
     </div>;
   }
-  console.log(author);
+  // console.log(author);
   return (
     <header className="mb-5">
       <div className="flex space-x-10">

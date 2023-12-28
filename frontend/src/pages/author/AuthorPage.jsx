@@ -14,6 +14,7 @@ const AuthorPage = () => {
         authorPostsLoader,
         authorPostsError,
     } = UseAuthors()
+
     return <>
         <main className="body-container mt-16 py-10">
             <AuthorInfo
