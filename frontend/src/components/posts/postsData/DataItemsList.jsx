@@ -15,6 +15,7 @@ const DataItemsList = ({ posts, user, handleLikePost }) => {
           <Link to={`/posts/${post._id}`} >
             <figure>
               <img
+                loading="lazy"
                 src={image} alt={post?.title} className="lg:w-[400px] w-full h-56 object-cover"
               /></figure>
           </Link>
@@ -30,6 +31,7 @@ const DataItemsList = ({ posts, user, handleLikePost }) => {
                     className="hover:underline flex space-x-1 items-center ">
                     <figure>
                       <img
+                        loading="lazy"
                         src={post?.user?.avatar?.url} alt={post?.title} className="w-8 h-8 object-cover rounded-full"
                       /></figure>
                     <span>{post?.user?.username}</span>

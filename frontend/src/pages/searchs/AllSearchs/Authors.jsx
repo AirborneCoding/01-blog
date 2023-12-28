@@ -8,7 +8,7 @@ const Authors = ({ authors }) => {
         className="transition-transform transform hover:scale-105 flex items-center"
       >
         <figure className='img'>
-          <img src={author?.avatar?.url} alt="" className='person-img rounded-full object-cover' />
+          <img src={author?.avatar?.url} alt="" className='person-img rounded-full object-cover' loading="lazy" />
         </figure>
         <div><h3 className="text-lg font-semibold">{author.username}</h3>
           <p className="text-gray-600">{author.bio}</p></div>

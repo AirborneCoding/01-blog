@@ -12,7 +12,9 @@ const RememberMe = () => {
           <figure className="text-center">
             <img src={"/rectangle-13@2x.png"}
               alt=""
-              className="person-img" />
+              className="person-img" 
+              loading="lazy"
+              />
           </figure>
           <FormInput
             name="password"

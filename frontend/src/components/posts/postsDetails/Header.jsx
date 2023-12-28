@@ -12,6 +12,7 @@ const Header = ({ user, formatedDate, category }) => {
       <div className="flex space-x-3">
         <div>
           <img
+            loading="lazy"
             src={user?.avatar?.url}
             alt={user?.username}
             className="h-11 w-11 rounded-full " />

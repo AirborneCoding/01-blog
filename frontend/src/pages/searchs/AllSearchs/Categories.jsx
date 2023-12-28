@@ -7,6 +7,7 @@ const Categories = ({ categories }) => {
       <div className="card w-96 bg-base-100 shadow-xl image-full">
         <figure>
           <img
+            loading="lazy"
             src={categoriesImages.find((c) => c.name === cate.name)?.img}
             alt={cate.name} className='opacity-70 bg-black '
           /></figure>

@@ -20,12 +20,12 @@ const NotFound = () => {
                     </div>
                 </div>
                 <div>
-                    <img src="https://i.ibb.co/G9DC8S0/404-2.png" />
+                    <img src="https://i.ibb.co/G9DC8S0/404-2.png" loading="lazy" />
                 </div>
             </div>
         </div>
         <div>
-            <img src="https://i.ibb.co/ck1SGFJ/Group.png" />
+            <img src="https://i.ibb.co/ck1SGFJ/Group.png" loading="lazy" />
         </div>
     </div>
 };

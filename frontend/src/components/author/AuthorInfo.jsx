@@ -26,7 +26,7 @@ const AuthorInfo = (props) => {
     <header className="mb-5">
       <div className="flex space-x-10">
         <figure>
-          <img className="person-img" alt={author?.username} src={author?.avatar?.url} />
+          <img className="person-img" alt={author?.username} src={author?.avatar?.url} loading="lazy" />
         </figure>
         <div className="mt-5" >
           <h2 className="font-bold">{author?.username}</h2>

@@ -23,6 +23,7 @@ const Authors = () => {
                                     src={author?.avatar?.url}
                                     alt={author?.username}
                                     className="rounded-full w-12 h-12"
+                                    loading="lazy"
                                 />
                             </figure>
                             <div>

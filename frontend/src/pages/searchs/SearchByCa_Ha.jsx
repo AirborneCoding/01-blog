@@ -60,7 +60,7 @@ const SearchByCa_Ha = () => {
                     return (
                         <div key={post?._id} className="card card-compact bg-base-100 shadow-xl">
                             <Link to={`/posts/${post?._id}`}>
-                                <img src={image} alt={post?.title} className="w-full h-80 object-cover" />
+                                <img src={image} alt={post?.title} className="w-full h-80 object-cover" loading="lazy" />
                             </Link>
                             <div className="card-body justify-between">
 
@@ -72,6 +72,7 @@ const SearchByCa_Ha = () => {
                                             className="hover:underline flex space-x-1 items-center">
                                             <figure>
                                                 <img
+                                                    loading="lazy"
                                                     src={post?.user?.avatar?.url} alt={post?.title} className="w-8 h-8 object-cover rounded-full"
                                                 /></figure>
                                             <span>{post?.user?.username}</span>

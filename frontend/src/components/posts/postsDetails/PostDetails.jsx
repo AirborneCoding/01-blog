@@ -46,6 +46,7 @@ const PostDetails = (props) => {
           src={post?.image?.url || img}
           alt={post?.title}
           className="w-full h-96 object-cover rounded-lg"
+          loading="lazy"
         />
       </div>
 

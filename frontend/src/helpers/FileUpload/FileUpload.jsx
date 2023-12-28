@@ -111,6 +111,7 @@ const FileUpload = ({ label, name, defaultValue, type, supportedFiles, multiple,
                                 <span>remove</span>
                             </button>
                             {file.previewURL && <img
+                                loading="lazy"
                                 className={`${forWhat === "profile" ? "h-48 w-48 rounded-full object-cover" : "h-56 w-full object-cover"}`}
                                 src={file.previewURL} alt={file.name} />}
                             <p>{file.name}</p>

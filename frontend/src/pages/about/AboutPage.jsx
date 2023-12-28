@@ -58,6 +58,7 @@ const AboutPage = () => {
                         {/* Team Member 1 */}
                         <div className="flex-shrink-0">
                             <img
+                                loading="lazy"
                                 src={image}
                                 alt="Team Member 1"
                                 className="h-24 w-24 object-cover rounded-full"
@@ -69,6 +70,7 @@ const AboutPage = () => {
                         {/* Team Member 2 */}
                         <div className="flex-shrink-0">
                             <img
+                                loading="lazy"
                                 src={image}
                                 alt="Team Member 2"
                                 className="h-24 w-24 object-cover rounded-full"

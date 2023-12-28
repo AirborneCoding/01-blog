@@ -28,7 +28,9 @@ const Published = (props) => {
                     <img
                         src={props?.user?.avatar?.url}
                         alt={props?.user?.username}
-                        className="h-10 w-10 rounded-full " />
+                        className="h-10 w-10 rounded-full " 
+                        loading="lazy"
+                        />
                 </div>
                 <div className="flex flex-col text-sm">
                     <div className="flex space-x-1">
@@ -65,6 +67,7 @@ const Published = (props) => {
                     src={props?.image?.url}
                     alt={props?.title}
                     className="h-40 w-full object-cover"
+                    loading="lazy"
                 />
             </figure>
         </div>

@@ -21,6 +21,7 @@ const UploadAvatar = ({ profileAvatar }) => {
                             src={URL.createObjectURL(avatar)}
                             alt="profile-image"
                             className="person-img"
+                            loading="lazy"
                         />
                         <button
                             type="submit"
@@ -46,6 +47,7 @@ const UploadAvatar = ({ profileAvatar }) => {
                             src={profileAvatar}
                             alt="profile-image"
                             className="person-img"
+                            loading="lazy"
                         />
                         <button
                             type="button"

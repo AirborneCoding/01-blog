@@ -53,7 +53,7 @@ const Navbar = ({ user }) => {
             <>
               <div tabIndex={1} className='dropdown indicator gap-x-4 -2 '>
                 <button className='btn btn-ghost' onClick={toggleProfileDropdown}>
-                  <img src={user?.avatar} alt={user?.username} className='rounded-full w-12 h-12 object-cover' />
+                  <img src={user?.avatar} alt={user?.username} className='rounded-full w-12 h-12 object-cover' loading="lazy" />
                   {/* <div className="text pt-2 text-xl">{user?.name}</div> */}
                 </button>
                 {isProfileDropdownOpen && (

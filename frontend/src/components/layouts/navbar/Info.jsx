@@ -60,6 +60,7 @@ const Info = ({ user }) => {
                                         src={user?.avatar}
                                         alt=""
                                         className="object-cover h-10 w-10 rounded-full"
+                                        loading="lazy"
                                     />
                                     <p className="pb-2" >
                                         {notification}
@@ -77,6 +78,7 @@ const Info = ({ user }) => {
                         alt="Profile"
                         className="md:w-12 md:h-12 w-9 h-9 rounded-full object-cover cursor-pointer"
                         onClick={handleProfileInfoClick}
+                        loading="lazy"
                     />
                     {
                         profileInfo && (

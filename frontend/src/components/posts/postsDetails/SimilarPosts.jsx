@@ -16,6 +16,7 @@ const SimilarPosts = ({ similarPosts }) => {
               <div className="flex space-x-3">
                 <Link to={`/author/${post?.user?._id}`} >
                   <img
+                    loading="lazy"
                     src={post?.user?.avatar?.url}
                     alt={post?.user?.username}
                     className="h-10 w-10 rounded-full " />
@@ -39,6 +40,7 @@ const SimilarPosts = ({ similarPosts }) => {
               </h2>
               <figure className="md:ml-2">
                 <img
+                  loading="lazy"
                   src={post?.image?.url}
                   alt={post?.title}
                   className="w-full h-20 object-cover rounded-lg"

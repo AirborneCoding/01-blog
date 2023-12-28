@@ -32,7 +32,7 @@ const Comments = ({ comments }) => {
             <div className="chat-image avatar">
               <div className="w-10 rounded-full">
                 <Link to={`/profile/${comment?.user?.username}`}>
-                  <img src={comment?.user?.avatar?.url} />
+                  <img src={comment?.user?.avatar?.url} loading="lazy" />
                 </Link>
               </div>
             </div>

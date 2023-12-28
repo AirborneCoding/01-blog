@@ -30,6 +30,7 @@ const Categories = ({ searchedCategory }) => {
                                     className='opacity-70 bg-black '
                                     src={categoriesImages.find((c) => c.name === cate.name)?.img}
                                     alt={cate.name}
+                                    loading="lazy"
                                 />
                             </figure>
 
@@ -48,16 +49,3 @@ const Categories = ({ searchedCategory }) => {
 
 export default Categories;
 
-
-
-/* 
-                        <div key={category._id} className="category-card">
-                            <img
-                                className="rounded-md"
-                                src={categoriesImages.find((c) => c.name === category.name)?.img}
-                                alt={category.name}
-                            />
-                            <p>{category.name}</p>
-                        </div>
-
-*/
