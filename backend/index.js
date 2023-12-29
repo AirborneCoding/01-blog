@@ -38,10 +38,10 @@ const errorHandlerMiddleware = require("./middleware/error-handler")
 //     })
 // );
 const corsOptions = {
-    origin: [process.env.ORIGINE], // specify the allowed origin
-    methods: 'GET,PUT,PATCH,POST,DELETE', // specify the allowed HTTP methods
-    credentials: true, // enable credentials (cookies, HTTP authentication) for cross-origin requests
-    optionsSuccessStatus: 204, // set the HTTP status code for successful OPTIONS requests
+    origin: process.env.ORIGINE,
+    methods: 'GET,PUT,PATCH,POST,DELETE',
+    credentials: true,
+    optionsSuccessStatus: 204,
 };
 
 app.use(helmet());
