@@ -45,8 +45,8 @@ const corsOptions = {
 };
 
 app.use(helmet());
-app.use(cors(corsOptions));
-// app.use(cors());
+// app.use(cors(corsOptions));
+app.use(cors());
 app.use(xss());
 app.use(mongoSanitize());
 app.use(morgan("tiny"))
