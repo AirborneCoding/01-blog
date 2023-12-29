@@ -1,13 +1,15 @@
-import React, { useEffect } from 'react';
-import { Link, useLocation, useOutletContext } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Loading, Pagination } from '@/helpers';
 import { formatDate } from '@/utils';
 import { FaEye } from '@/assets/icons';
 import defaultImage from "/default.png";
+import {
+    useFetchAllPostsQuery,
+} from "@/redux/services/postsServices";
 
 const SearchByCa_Ha = () => {
     window.scrollTo(0, 100)
-    const { user, useFetchAllPostsQuery } = useOutletContext()
+
 
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
@@ -25,9 +27,6 @@ const SearchByCa_Ha = () => {
         });
     }
 
-    // useEffect(() => {
-    //     refetch({ category, hashtags });
-    // }, [category, hashtags, refetch]);
 
     if (cateLoader || cateLoader) {
         return <Loading />

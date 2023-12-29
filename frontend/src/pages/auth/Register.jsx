@@ -40,7 +40,9 @@ const Register = () => {
                     />
                     <div className="mt-8">
                         <SubmitBtn
-                            text="Register"
+                            text={isLoading ? "Please wait..." : "register"}
+                            disabled={isLoading}
+
                         />
                     </div>
                     <Link to="/login" className='text-start font-medium  inline-block pt-1.5'>

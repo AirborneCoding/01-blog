@@ -8,7 +8,7 @@ import { formatDate } from "@/utils";
 import { Loading } from "@/helpers";
 
 const PostDetails = (props) => {
-  window.scroll(0, 100)
+  // window.scroll(0, 100)
   const {
     user,
     handleLikePost,

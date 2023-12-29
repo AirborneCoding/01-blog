@@ -8,8 +8,8 @@ import { Error } from "@/errors"
 import { Loading } from "@/helpers";
 
 const SinglePost = () => {
-  window.scrollTo(0, 100)
-  const { user } = useOutletContext()
+  // window.scrollTo(0, 100)
+
 
   const {
     useFetchSinglePostQuery,
@@ -26,7 +26,8 @@ const SinglePost = () => {
     // similare posts
     similarPosts,
     similarPostsError,
-    similarPostsLoader
+    similarPostsLoader,
+    user
   } = usePostDetails()
 
 

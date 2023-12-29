@@ -5,7 +5,10 @@ import NavLinks from './NavLinks';
 import NavSearch from "../navbar/NavSearch"
 import { useDispatch, useSelector } from 'react-redux';
 import { logoutUser } from "@/utils"
-const Navbar = ({ user }) => {
+
+
+const Navbar = () => {
+  const { user } = useSelector(state => state?.auth)
   const dispatch = useDispatch();
   const [isProfileDropdownOpen, setProfileDropdownOpen] = useState(false);
 

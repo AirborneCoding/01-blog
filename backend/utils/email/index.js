@@ -1,8 +1,8 @@
 const sendVerificationEmail = require("./content/sendVerificationEmail")
-const sendResetPassword = require("./content/sendResetPassword")
+const sendResetPasswordEmail = require("./content/sendResetPassword")
 
 
 module.exports = {
- sendVerificationEmail,
- sendResetPassword
+    sendVerificationEmail,
+    sendResetPasswordEmail
 }

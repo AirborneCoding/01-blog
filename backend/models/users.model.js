@@ -1,6 +1,7 @@
 const mongoose = require("mongoose")
 const validator = require("validator")
 const bcrypt = require("bcryptjs")
+const jwt = require('jsonwebtoken');
 
 const usernameValidator = (username) => {
     return /^[a-zA-Z0-9_]+$/.test(username);
@@ -55,6 +56,14 @@ const UserSchema = new mongoose.Schema({
         type: String,
         enum: ['admin', 'user'],
     },
+    verificationToken: String,
+    isVerified: {
+        type: Boolean,
+        default: false,
+    },
+    passwordToken: {
+        type: String,
+    },
 },
     {
         timestamps: true,
@@ -67,11 +76,20 @@ const UserSchema = new mongoose.Schema({
 
 //hash ispassword change pre save
 UserSchema.pre("save", async function () {
+    console.log(this.isModified("password"));
     if (!this.isModified("password")) return
     const salt = await bcrypt.genSalt(10)
     this.password = await bcrypt.hash(this.password, salt)
 })
 
+//! create jwt hook
+UserSchema.methods.createJWT = function () {
+    return jwt.sign(
+        { userId: this._id, name: this.username, role: this.role },
+        process.env.JWT_SECRET,
+        { expiresIn: process.env.JWT_LIFETIME }
+    )
+}
 
 // comparePassword hook
 UserSchema.methods.comparePassword = async function (canditatePassword) {

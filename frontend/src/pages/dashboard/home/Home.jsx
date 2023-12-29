@@ -1,6 +1,5 @@
-import React from "react";
 import useStats from "@/hooks/dashboard/useStats";
-import { Link } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 import Chart from "./Chart"
 const Home = () => {
   const {
@@ -9,7 +8,8 @@ const Home = () => {
     isTotalsError,
     totalsError,
   } = useStats()
-  console.log(totals);
+  const { user } = useOutletContext()
+
   return <main>
     <section className="my-10 grid grid-cols-1 gap-4 md:grid-cols-5 md:grid-rows-2" >
       <div className="md:raw-span-2 border-2 p-5">
@@ -33,8 +33,19 @@ const Home = () => {
 
     {/* CHART */}
     <section>
-      <h2 className="font-semibold text-[25px]">Total Views:</h2>
-      <Chart />
+      <h2 className="font-semibold text-[25px] mb-5">Total Views:</h2>
+      {
+        user?.isVerified
+          ? (
+            <>
+              <Chart />
+            </>
+          ) : (
+            <>
+              <h3 className="text-xl">⚠  Please verify your email to can see visualation data about your posts</h3>
+            </>
+          )
+      }
     </section>
 
   </main>;

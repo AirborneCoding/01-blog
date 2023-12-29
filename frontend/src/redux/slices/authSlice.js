@@ -7,6 +7,12 @@ const getUserFromLocalStorage = () => {
 const initialState = {
     user: getUserFromLocalStorage(),
     registerMessage: false,
+    isEmailVerified: false,
+    verifyResetPasswordMessage: {
+        isSend: false,
+        isVerified: false,
+        isChanged: false
+    },
 }
 
 const authSlice = createSlice({
@@ -22,6 +28,18 @@ const authSlice = createSlice({
             state.user = null
             localStorage.removeItem("user")
         },
+        setVerifyEmailMessage(state, action) {
+            state.isEmailVerified = true
+        },
+        setIsSendVerifyPassword(state, action) {
+            state.verifyResetPasswordMessage.isSend = action.payload
+        },
+        setIsVerifyPasswordLink(state, action) {
+            state.verifyResetPasswordMessage.isVerified = action.payload
+        },
+        setIsPasswordChanged(state, action) {
+            state.verifyResetPasswordMessage.isChanged = action.payload
+        },
 
     }
 })
@@ -29,6 +47,11 @@ const authSlice = createSlice({
 export const {
     login,
     logout,
+
+    setVerifyEmailMessage,
+    setIsSendVerifyPassword,
+    setIsVerifyPasswordLink,
+    setIsPasswordChanged,
 } = authSlice.actions
 
 export default authSlice.reducer

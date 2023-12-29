@@ -8,8 +8,10 @@ import { useAddCommentMutation } from "@/redux/services/commentsServices";
 import { getFormValues } from "@/helpers";
 import { useFetchPostCommentsQuery } from "@/redux/services/commentsServices";
 import { useIncrementViewCountMutation } from "@/redux/services/postsServices";
+import { useSelector } from "react-redux"
 
 const usePostDetails = () => {
+    const { user } = useSelector(state => state?.auth)
     // get post id
     const { id } = useParams();
 
@@ -91,7 +93,8 @@ const usePostDetails = () => {
         similarPosts,
         similarPostsError,
         similarPostsLoader,
-        postId: id
+        postId: id,
+        user
     };
 };
 

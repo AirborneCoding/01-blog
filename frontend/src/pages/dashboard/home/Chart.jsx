@@ -22,7 +22,7 @@ const UserPostViewsChart = () => {
     }
 
     if (!charts || charts.length === 0) {
-        return <div>No data available</div>;
+        return <div className='text-center mt-32 text-xl'>No data available</div>;
     }
 
     const formatMonthName = (month) => {

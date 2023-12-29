@@ -5,7 +5,7 @@ import { getFormValues } from '@/helpers';
 
 const useRegister = () => {
     const navigate = useNavigate();
-    const [RegisterUserMutation, { isLoading, isError, error, data }] = useRegisterUserMutation();
+    const [RegisterUserMutation, { isLoading, isError, error: regisetr, data }] = useRegisterUserMutation();
 
     const handleRegister = async (e) => {
         e.preventDefault()
@@ -13,12 +13,12 @@ const useRegister = () => {
         e.currentTarget?.reset()
 
         try {
-            const result = await RegisterUserMutation(data).unwrap();
-            displayToast("register success, please log-in", "success")
-            navigate('/login');
+            const result = await RegisterUserMutation(data)
+            displayToast(`${result.data.msg}`, "success")
+            navigate('/auth/registerMessage');
         } catch (error) {
             displayToast(error?.data?.msg || "Something went wrong", "error")
-            console.error(error);
+            console.error(error, regisetr);
 
         }
     };
@@ -26,7 +26,7 @@ const useRegister = () => {
     return {
         isLoading,
         isError,
-        error,
+        regisetr,
         data,
         handleRegister,
     };

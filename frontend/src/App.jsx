@@ -30,6 +30,8 @@ import {
 
 // infastructions
 import ProtectedAuth from "@/infrastructure/ProtectedAuth"
+import RegisterMsg from "./pages/auth/RegisterMsg"
+import VerifyEmail from "./pages/auth/VerifyEmail"
 
 const router = createBrowserRouter([
   // *************HOME*****************
@@ -119,6 +121,22 @@ const router = createBrowserRouter([
     path: "/register",
     element: <ProtectedAuth isExist={true}><Register /></ProtectedAuth>,
   },
+  {
+    path: "/auth/registerMessage",
+    element: <ProtectedAuth isExist={false}  ><RegisterMsg /></ProtectedAuth>,
+  },
+  {
+    path: "/auth/verify-email",
+    element: <VerifyEmail />,
+  },
+  // {
+  //   path: "/forgot-password",
+  //   element: <ForgotPassword />,
+  // },
+  // {
+  //   path: "/auth/reset-password",
+  //   element: <ResetPassword />,
+  // },
 
   // *************404*****************
   {

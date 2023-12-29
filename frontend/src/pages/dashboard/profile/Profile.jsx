@@ -6,19 +6,25 @@ import useProfile from "@/hooks/dashboard/useProfile";
 const Profile = () => {
     const {
         //fetch user
-        userProfile,
-        loadingUser,
-        userError,
-        userErrorData,
+        // userProfile,
+        // loadingUser,
+        // userError,
+        // userErrorData,
         // edit
         onSubmit,
         editProfileLoader,
         isEditProfileError,
     } = useProfile()
 
-    if (loadingUser) {
-        return <Loading />
-    }
+    // if (loadingUser) {
+    //     return <Loading />
+    // }
+
+    const {
+        user
+    } = useOutletContext()
+    const userProfile = user
+
     // mx - auto md: w - auto 
     return <main className="grid place-content-center mt-1.52 w-full">
         <div>

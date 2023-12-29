@@ -19,9 +19,46 @@ const authServices = createApi({
                 body: userData,
             }),
         }),
+        verifyEmail: builder.mutation({
+            query: (verifyInfo) => ({
+                url: `/auth/verify-email`,
+                method: 'POST',
+                body: verifyInfo,
+            }),
+        }),
+        // Add other mutations here
+        updateUserProfile: builder.mutation({
+            query: (updateData) => ({
+                url: '/auth/update-profile',
+                method: 'PUT',
+                body: updateData,
+            }),
+        }),
+        sendResetPasswordLink: builder.mutation({
+            query: (data) => ({
+                url: '/password/reset-password-link',
+                method: 'POST',
+                body: data,
+            }),
+        }),
+        resetPassword: builder.mutation({
+            query: (resetData) => ({
+                url: '/auth/reset-password',
+                method: 'POST',
+                body: resetData,
+            }),
+        }),
+
     }),
 });
 
-export const { useLoginUserMutation, useRegisterUserMutation } = authServices;
+export const {
+    useLoginUserMutation,
+    useRegisterUserMutation,
+    useVerifyEmailMutation,
+    useSendResetPasswordLinkMutation,
+    useUpdateUserProfileMutation,
+    useResetPasswordMutation,
+} = authServices;
 
 export default authServices;

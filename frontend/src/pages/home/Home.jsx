@@ -7,11 +7,28 @@ import {
     Section5,
     Section6,
 } from "@/components";
+import useHome from "@/hooks/home/useHome";
+import { Loading } from "@/helpers";
+import { Error } from "@/errors";
 
 const Home = () => {
-    const { homePosts } = useOutletContext()
+    // const { homePosts } = useOutletContext()
 
-    // console.log(homePosts);
+    const {
+        homePosts,
+        homeLoading,
+        isHomeError,
+        HomeError,
+    } = useHome();
+
+    if (homeLoading) {
+        return <Loading />
+    }
+
+    if (isHomeError) {
+        return <Error status={HomeError} />
+    }
+
     const { posts } = homePosts
 
     return <main className="pb-16 my-10">

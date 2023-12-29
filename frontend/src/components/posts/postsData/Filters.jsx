@@ -1,7 +1,7 @@
-import React from "react";
+import React, { memo } from "react";
 import { SearchInput } from "@/helpers";
 
-const Filters = ({ handleSearchChange, searchValue }) => {
+const Filters = memo(({ handleSearchChange, searchValue }) => {
 
     return <form className="md:w-[700px] mx-auto">
         <SearchInput
@@ -13,6 +13,6 @@ const Filters = ({ handleSearchChange, searchValue }) => {
             onChange={handleSearchChange}
         />
     </form>
-};
+});
 
 export default Filters;

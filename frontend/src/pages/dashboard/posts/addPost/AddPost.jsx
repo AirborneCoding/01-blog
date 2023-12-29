@@ -4,13 +4,14 @@ import {
     FormArrayInput,
     FormInput,
     SelectInput,
-    TextEditor, SubmitBtn
+    TextEditor, SubmitBtn,
 } from "@/helpers";
 
 import useCategory from "@/hooks/categories/UseCategory";
 import useWritePost from "@/hooks/dashboard/useWritePost";
-
+import { useOutletContext } from "react-router-dom"
 const AddPost = () => {
+    const { user } = useOutletContext()
     const { categories } = useCategory()
     const {
         onSubmit,
@@ -18,6 +19,8 @@ const AddPost = () => {
         postLoader,
         handleInputChange
     } = useWritePost()
+
+
 
     return (
         <main className="grid place-content-center mt-1.5 w-56 mx-auto md:w-auto">
@@ -69,11 +72,20 @@ const AddPost = () => {
                     required
                 />
 
-                <SubmitBtn
-                    text="publish"
-                    isSubmitting={postLoader}
-                    disabled={!isFormValid} // Disable the button if the form is not valid
-                />
+                {
+                    user?.isVerified
+                        ?
+                        <SubmitBtn
+                            text="publish"
+                            isSubmitting={postLoader}
+                            disabled={!isFormValid}
+                        />
+                        :
+                        <SubmitBtn
+                            text="Verify your email first"
+                            disabled={true}
+                        />
+                }
                 <br />
 
             </form>

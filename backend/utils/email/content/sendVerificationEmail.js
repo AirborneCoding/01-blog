@@ -7,13 +7,12 @@ const sendVerificationEmail = async ({
   email,
   verificationToken,
   origin,
-  userId
 }) => {
-  //users
-  // const verifyEmail = `${origin}/auth/verify-email/${userId}/verify/${verificationToken}`
-  const verifyEmail = `${origin}/auth/verify-email?token=${verificationToken}&email=${email}`
 
-  const templatePath = path.join(__dirname, './template/verifyEmail.ejs');
+
+  const verifyEmail = `${origin}/auth/verify-email?token=${verificationToken}&email=${email}`;
+
+  const templatePath = path.join(__dirname, '../template/verifyEmail.ejs');
 
   const renderedTemplate = await ejs.renderFile(templatePath, {
     name: name,

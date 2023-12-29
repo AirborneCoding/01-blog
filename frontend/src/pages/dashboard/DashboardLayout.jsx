@@ -7,6 +7,9 @@ import SmallSidebar from "@/components/layouts/sidebar/SmallSidebar"
 import styled from 'styled-components';
 import { useSelector, useDispatch } from "react-redux"
 import { logoutUser } from "@/utils"
+import useProfile from "../../hooks/dashboard/useProfile"
+import { Loading } from "@/helpers"
+
 const Wrapper = styled.section`
   .dashboard {
     display: grid;
@@ -29,7 +32,15 @@ const Wrapper = styled.section`
 
 const Dashboard = () => {
 
-    const { user } = useSelector(state => state?.auth)
+    // const { user } = useSelector(state => state?.auth)
+    const {
+        //fetch user
+        userProfile,
+        loadingUser,
+    } = useProfile()
+
+
+
     const dispatch = useDispatch()
     const [showSidebar, setShowSidebar] = useState(false);
     const toggleSidebar = () => {
@@ -58,7 +69,7 @@ const Dashboard = () => {
                     handleLogout={handleLogout}
                 />
                 <div className='dashboard-page'>
-                    <Outlet context={{ user, handleLogout }} />
+                    {loadingUser ? <Loading /> : <Outlet context={{ user: userProfile, handleLogout }} />}
                 </div>
 
             </div>
