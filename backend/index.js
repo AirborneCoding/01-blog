@@ -38,7 +38,7 @@ app.use(
     })
 );
 const corsOptions = {
-    origin: [process.env.ORIGINE, "https://01-react-query.netlify.app/"],
+    origin: [process.env.ORIGINE, "https://01-react-query.netlify.app"],
     methods: 'GET,PUT,PATCH,POST,DELETE',
     credentials: true,
     optionsSuccessStatus: 204,
