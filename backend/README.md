@@ -66,3 +66,18 @@
 ## CLOUD_NAME = your cloudinary name
 ## CLOUD_API_KEY = your cloudinary key 
 ## CLOUD_API_SECRET = your cloudinary secret
+{
+    "version": 2,
+    "builds":[
+        {
+            "src":"./index.js",
+            "use":"@vercel/node"
+        }
+    ],
+    "routes":[
+        {
+            "src":"/(./*)",
+            "dest":"/"
+        }
+    ]
+}
