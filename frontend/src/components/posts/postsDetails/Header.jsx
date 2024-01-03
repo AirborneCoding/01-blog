@@ -39,7 +39,6 @@ const Header = ({ user, formatedDate, category }) => {
           </div>
         )}
       </div>
-
     </div>
   );
 };

@@ -77,4 +77,3 @@ const DataItemsGrid = ({ posts, user, handleLikePost, fromSearch }) => {
 };
 
 export default DataItemsGrid;
-

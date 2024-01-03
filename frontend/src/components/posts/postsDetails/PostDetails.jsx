@@ -112,8 +112,6 @@ const PostDetails = (props) => {
 
         }
       </section>
-
-
     </article>
   );
 };
