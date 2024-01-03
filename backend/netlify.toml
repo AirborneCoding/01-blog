@@ -1,9 +1,8 @@
 [build]
-    command = "npm install"
-    publish="/dist"
-    base="/"
+  command = "npm install"
+  functions = "/"
 
-[[redirects]] 
-    from = "/*" 
-    to  = "/index.html"
-    status = 200
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
