@@ -31,12 +31,12 @@ const errorHandlerMiddleware = require("./middleware/error-handler")
 
 // use packages
 // todo
-app.use(
-    rateLimiter({
-        windowMs: 15 * 60 * 1000,
-        max: 60,
-    })
-);
+// app.use(
+//     rateLimiter({
+//         windowMs: 15 * 60 * 1000,
+//         max: 60,
+//     })
+// );
 const corsOptions = {
     origin: [process.env.ORIGINE, "https://01-react-query.netlify.app"],
     methods: 'GET,PUT,PATCH,POST,DELETE',
