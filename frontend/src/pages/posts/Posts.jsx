@@ -33,7 +33,7 @@ const Posts = () => {
                 </div>
 
                 <div className="flex-grow pb-4">
-                    {isLoading || isFetching ? (
+                    {isLoading ? (
                         <Loading />
                     ) : (
                         <>
@@ -65,3 +65,4 @@ const Posts = () => {
 };
 
 export default Posts;
+//|| isFetching
