@@ -6,7 +6,7 @@ moment.locale('fr')
 import { logout } from "../redux/slices/authSlice";
 
 // export const developmentUrl = "http://localhost:5000/api/v1"
-export const developmentUrl = "https://01-blog-server-kpxk38jt8-airbornecoding.vercel.app/api/v1"
+export const developmentUrl = import.meta.env.NODE_ENV === "production" ? null : import.meta.env.VITE_ORIGINE
 
 export const customFetch = axios.create({
     baseURL: developmentUrl,

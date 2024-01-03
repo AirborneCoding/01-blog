@@ -31,22 +31,22 @@ const errorHandlerMiddleware = require("./middleware/error-handler")
 
 // use packages
 // todo
-// app.use(
-//     rateLimiter({
-//         windowMs: 15 * 60 * 1000,
-//         max: 60,
-//     })
-// );
+app.use(
+    rateLimiter({
+        windowMs: 15 * 60 * 1000,
+        max: 60,
+    })
+);
 const corsOptions = {
-    origin: process.env.ORIGINE,
+    origin: [process.env.ORIGINE, "https://01-react-query.netlify.app/"],
     methods: 'GET,PUT,PATCH,POST,DELETE',
     credentials: true,
     optionsSuccessStatus: 204,
 };
 
 app.use(helmet());
-// app.use(cors(corsOptions));
-app.use(cors());
+app.use(cors(corsOptions));
+// app.use(cors());
 app.use(xss());
 app.use(mongoSanitize());
 app.use(morgan("tiny"))
