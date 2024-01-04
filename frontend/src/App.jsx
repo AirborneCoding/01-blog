@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
-
+import { SpeedInsights } from '@vercel/speed-insights/react';
 // pages
 import {
   Login, Register,
@@ -146,7 +146,10 @@ const router = createBrowserRouter([
 ])
 
 const App = () => {
-  return <RouterProvider router={router} />
+  return <main>
+    <RouterProvider router={router} />
+    <SpeedInsights />
+  </main>
 };
 
 export default App;
